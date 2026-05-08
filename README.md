@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # API de Tarefas - Atividade para Alunos
 
 Este repositório contém a estrutura inicial de uma API de gerenciamento de tarefas, desenvolvida com Node.js, Express e TypeScript. O objetivo desta atividade é que os alunos completem as funcionalidades pendentes, tanto na API RESTful quanto nas páginas renderizadas com EJS.
@@ -82,3 +83,6 @@ Vocês podem criar um `index.html` inicial e adicionar estilos em `styles.css` p
 -   Tratem os erros de forma adequada, retornando status HTTP apropriados e mensagens claras.
 
 Boa sorte com a atividade!
+=======
+# Api-Tarefas
+>>>>>>> f173c27c5c1773c99c31f8609726d18d0ac8f660
