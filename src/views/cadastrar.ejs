@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nova Tarefa</title>
+
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <main class="container">
+
+    <div class="form-card">
+
+      <a class="voltar" href="/tarefas">
+        ← Voltar
+      </a>
+
+      <h1>➕ Nova Tarefa</h1>
+
+      <form
+        action="/tarefas/cadastrar"
+        method="POST"
+      >
+
+        <label>Título</label>
+
+        <input
+          type="text"
+          name="titulo"
+          required
+        >
+
+        <label>Descrição</label>
+
+        <textarea
+          name="descricao"
+          rows="5"
+        ></textarea>
+
+        <label>Prioridade</label>
+
+        <select name="prioridade">
+
+          <option value="alta">
+            Alta
+          </option>
+
+          <option value="media">
+            Média
+          </option>
+
+          <option value="baixa">
+            Baixa
+          </option>
+
+        </select>
+
+        <button class="btn" type="submit">
+          Salvar tarefa
+        </button>
+
+      </form>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

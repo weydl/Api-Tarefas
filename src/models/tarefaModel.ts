@@ -86,3 +86,4 @@ export async function remover(id: number): Promise<Tarefa | null> {
     await salvar(tarefas);
     return removida;
 }
+ 

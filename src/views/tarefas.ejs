@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tarefas</title>
+
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <header class="topo">
+    <h1>📋 Gerenciador de Tarefas</h1>
+
+    <a class="btn" href="/tarefas/cadastrar">
+      + Nova tarefa
+    </a>
+  </header>
+
+  <main class="container">
+
+    <% if (tarefas.length === 0) { %>
+
+      <div class="vazio">
+        <h2>Nenhuma tarefa cadastrada</h2>
+        <p>Comece criando sua primeira tarefa.</p>
+      </div>
+
+    <% } %>
+
+    <div class="grid">
+
+      <% tarefas.forEach(tarefa => { %>
+
+        <div class="card">
+
+          <div class="card-top">
+
+            <h2>
+              <a href="/tarefas/<%= tarefa.id %>">
+                <%= tarefa.titulo %>
+              </a>
+            </h2>
+
+            <% if (tarefa.concluida) { %>
+
+              <span class="status concluida">
+                Concluída
+              </span>
+
+            <% } else { %>
+
+              <span class="status pendente">
+                Pendente
+              </span>
+
+            <% } %>
+
+          </div>
+
+          <p class="descricao">
+            <%= tarefa.descricao || "Sem descrição" %>
+          </p>
+
+          <div class="info">
+            <span>
+              Prioridade:
+              <strong><%= tarefa.prioridade %></strong>
+            </span>
+          </div>
+
+          <div class="acoes">
+
+            <form
+              action="/tarefas/<%= tarefa.id %>/concluir"
+              method="POST"
+            >
+              <button class="btn-secundario" type="submit">
+                Alterar status
+              </button>
+            </form>
+
+            <form
+              action="/tarefas/<%= tarefa.id %>/excluir"
+              method="POST"
+            >
+              <button class="btn-danger" type="submit">
+                Excluir
+              </button>
+            </form>
+
+          </div>
+
+        </div>
+
+      <% }) %>
+
+    </div>
+
+  </main>
+
+</body>
+</html>
